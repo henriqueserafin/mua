@@ -65,7 +65,7 @@ export default function Login({ onLogin }: LoginProps) {
             />
            
           </div>
-          <a href="" className='text-zinc-700' target="_blank">Esqueceu sua senha</a>
+          
           
         </div>
   
@@ -77,7 +77,14 @@ export default function Login({ onLogin }: LoginProps) {
             Entrar
           </button>
           
+          
         </div>
+        <button
+            type="submit"
+            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white  bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 hover:bg-blue-400 "
+          >
+            Esqueceu sua senha
+          </button>
       </form>
     </div>
   </div>
