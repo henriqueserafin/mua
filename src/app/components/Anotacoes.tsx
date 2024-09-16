@@ -14,19 +14,19 @@ export default function Anotacoes() {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 ">
       <h2 className="text-xl font-semibold">Minhas Anotações</h2>
       <div className="flex space-x-2">
         <input
           type="text"
           value={novaAnotacao}
           onChange={(e) => setNovaAnotacao(e.target.value)}
-          className="flex-grow px-3 py-2 border rounded text-gray-800 bg-white"
+          className="flex-grow px-3 py-2 border rounded text-grey-800 bg-white"
           placeholder="Digite sua anotação"
-        />
+        />asdasd
         <button
           onClick={adicionarAnotacao}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-500"
         >
           Adicionar
         </button>

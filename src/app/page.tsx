@@ -1,21 +1,33 @@
 'use client'
 
 import { useState } from 'react'
+import Login from './components/Login'
 import Anotacoes from './components/Anotacoes'
 import Notas from './components/Notas'
 import Comunidades from './components/Comunidades'
 
+
+
 export default function Home() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [activeTab, setActiveTab] = useState('anotacoes')
 
+  const handleLogin = (email: string, password: string) => {
+    // Aqui você deve implementar a lógica real de autenticação
+    // Por enquanto, vamos apenas simular um login bem-sucedido
+    console.log('Login attempt:', email, password)
+    setIsLoggedIn(true)
+  }
+
+  if (!isLoggedIn) {
+    return <Login onLogin={handleLogin} />
+  }
+
   return (
-    <div className="min-h-screen bg-gray-800">
+    <div className="min-h-screen bg-blue-200">
       <header className="bg-blue-600 text-white p-4">
         <h1 className="text-2xl font-bold text-center">Estudo Colaborativo</h1>
-        <h1 className="text-2xl font-bold">Logo</h1>
-
-        
-        
+        <p>logo</p>
       </header>
       <nav className="bg-blue-500 p-2">
         <ul className="flex space-x-4">
@@ -42,6 +54,14 @@ export default function Home() {
             >
               Comunidades
             </button>
+            <li>
+            <button
+              className={`px-3 py-2 rounded ${activeTab === 'esqueceu' ? 'bg-white text-blue-600' : 'text-white'}`}
+              onClick={() => setActiveTab('esqueceu')}
+            >
+              Comunidades
+            </button>
+          </li>
           </li>
         </ul>
       </nav>
